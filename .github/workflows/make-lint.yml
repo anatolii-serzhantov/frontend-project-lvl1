@@ -1,0 +1,5 @@
+name: launch-linter
+on: [push]
+jobs:
+steps:
+- run: make lint
