@@ -7,5 +7,6 @@ jobs:
     name: lint before push
     runs-on: ubuntu-latest
     steps:
-    - name: run linter
+    - name: lint
     - run: make lint
+    - shell: bash
