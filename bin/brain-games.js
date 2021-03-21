@@ -2,4 +2,4 @@
 import askingUserName from './src/cli.js';
 
 console.log('Welcome to the Brain Games!');
-askingUserName();
+console.log(`Hello ${askingUserName()}!`);
