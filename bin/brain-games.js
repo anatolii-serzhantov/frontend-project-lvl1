@@ -1,5 +1,10 @@
 #!/usr/bin/env node
 import { askingUserName } from './src/cli.js';
 
-console.log('Welcome to the Brain Games!');
-console.log(`Hello ${askingUserName()}!`);
+export const getUserName = () => {
+    console.log('Welcome to the Brain Games!');
+    const userName = askingUserName();
+    return userName;
+};
+
+export const userName = getUserName();
