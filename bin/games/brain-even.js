@@ -1,28 +1,37 @@
 #!/usr/bin/env node
-import { askingUserAnswer, askingUserName } from '../src/cli.js';
-import { userName, getUserName } from '/Users/tolya/frontend-project-lvl1/bin/brain-games.js';
+import { askingUserAnswer } from '../src/cli.js';
+import { userName } from '/Users/tolya/frontend-project-lvl1/bin/brain-games.js';
 
 const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
-const gameQuestion = Math.floor(Math.random() * 100);
+const gameQuestion = () => {
+    const randomNumber = Math.floor(Math.random() * 100);
+    return randomNumber;
+};
 const isEven = (number) => ((number % 2 === 0));
-const verifiedAnswer = (isEven(gameQuestion)) ? 'yes' : 'no';
+const chekingAnswer = (number) => {
+    const verifiedAnswer = isEven(number) ? 'yes' : 'no';
+    return verifiedAnswer;
+}
 
-const engine = (gameDescription, gameQuestion, verifiedAnswer) => {
-    console.log(gameDescription);
+const engine = (description, question, checker) => {
+    console.log(description);
     for (let i = 0; i < 3; i += 1) {
-        console.log(`Question: ${gameQuestion}`);
+        const singleQuestion = question();
+        console.log(`Question: ${singleQuestion}`);
         const answer = askingUserAnswer();
-        if (answer === verifiedAnswer) {
+        const checkedAnswer = checker(singleQuestion);
+        checker(checkedAnswer);
+        if (answer === checkedAnswer) {
             console.log('Correct');
         } else {
-            console.log(`'${answer}' is wrong answer ;(. Correct answer was '${verifiedAnswer}'.
+            console.log(`'${answer}' is wrong answer ;(. Correct answer was '${checkedAnswer}'.
             Let's try again, ${userName}!`);
             break;
         }
         if (i === 2) {
-            console.log(`Congratulations, ${askingUserName()}!`);
+            console.log(`Congratulations, ${userName}!`);
         }
     }
 }
 
-engine(gameDescription, gameQuestion, verifiedAnswer);
+engine(gameDescription, gameQuestion, chekingAnswer);
