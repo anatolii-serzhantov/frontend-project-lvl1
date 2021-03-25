@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { engine } from '../src/index.js';
+import engine from '../src/index.js';
 
 const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
 const gameQuestion = () => {

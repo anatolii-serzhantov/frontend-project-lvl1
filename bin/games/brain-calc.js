@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { engine } from '../src/index.js';
+import engine from '../src/index.js';
 
 const gameDescription = 'What is the result of the expression?';
 const gameQuestion = () => {
