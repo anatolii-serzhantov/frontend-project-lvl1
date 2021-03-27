@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 import { askingUserName } from './src/cli.js';
 
 export const getUserName = () => {

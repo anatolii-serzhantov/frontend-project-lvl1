@@ -1,10 +1,9 @@
-#!/usr/bin/env node
 import { askingUserAnswer } from './cli.js';
 import { userName } from '../brain-games.js';
 
 console.log(`Hello, ${userName}!`);
 
-export const engine = (description, question, checker) => {
+const engine = (description, question, checker) => {
     console.log(description);
     for (let i = 0; i < 3; i += 1) {
         const singleQuestion = question();
@@ -24,3 +23,5 @@ export const engine = (description, question, checker) => {
         }
     }
 };
+
+export default engine;
