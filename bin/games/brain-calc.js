@@ -13,12 +13,21 @@ const gameQuestion = () => {
 }
 
 const chekingAnswer = (expression) => {
-  function parse (str) {
-    return Function(`'use strict'; return (${str})`)()
-  }
+  const elementsOfExpression = expression.split(' ')
+  const numberOne = Number(elementsOfExpression[0])
+  const numberTwo = Number(elementsOfExpression[2])
+  const operator = elementsOfExpression[1]
 
-  // console.log(parse(expression)) // 4.336886679999999
-  return parse(expression).toString() // работающая старая строка
+  switch (operator) {
+    case '*':
+      return (numberOne * numberTwo).toString()
+    case '+':
+      return (numberOne + numberTwo).toString()
+    case '-':
+      return (numberOne - numberTwo).toString()
+    default:
+      return ' '
+  }
 }
 
 engine(gameDescription, gameQuestion, chekingAnswer)
