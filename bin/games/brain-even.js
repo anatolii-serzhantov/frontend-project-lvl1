@@ -8,7 +8,7 @@ const gameQuestion = () => {
 };
 const isEven = (number) => ((number % 2 === 0));
 const chekingAnswer = (number) => {
-  const verifiedAnswer = isEven(number) ? 'yes' : 'no'
+  const verifiedAnswer = isEven(number) ? 'yes' : 'no';
   return verifiedAnswer;
 };
 

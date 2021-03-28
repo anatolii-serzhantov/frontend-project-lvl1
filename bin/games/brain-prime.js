@@ -6,7 +6,7 @@ const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer
 const gameQuestion = () => {
   const randomNumber = Math.floor(Math.random() * 100);
   return randomNumber.toString();
-}
+};
 
 const chekingAnswer = (expression) => {
   const number = Number(expression);

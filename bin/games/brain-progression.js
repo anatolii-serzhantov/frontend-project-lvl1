@@ -30,6 +30,7 @@ const gameQuestion = () => {
   return createProgression(firstNumber, increaseNumber);
 };
 
+// eslint-disable-next-line consistent-return
 const chekingAnswer = (expression) => {
   const array = expression.split(' ').map(Number);
   for (let i = 0; i < array.length; i += 1) {
@@ -44,6 +45,7 @@ const chekingAnswer = (expression) => {
         return (array[i + 1] - ((array[i + 2] - array[i + 1]))).toString();
       }
     } else {
+      // eslint-disable-next-line no-continue
       continue;
     }
   }

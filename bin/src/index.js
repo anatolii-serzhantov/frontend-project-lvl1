@@ -1,3 +1,4 @@
+/* eslint-disable import/named */
 import { askingUserAnswer } from './cli.js';
 import { userName } from '../brain-games.js';
 
