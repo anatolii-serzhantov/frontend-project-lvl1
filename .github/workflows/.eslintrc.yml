@@ -1,5 +1,13 @@
 on: push
 
+jobs:
+  run_eslint:
+    runs-on: ubuntu-latest
+    steps:
+    - run:
+        standart --fix
+        make lint
+        
 env:
   browser: true
   es2021: true
@@ -13,3 +21,4 @@ rules: {
   no-console: 'off',
   import/extensions: 'off',
 }
+
