@@ -34,6 +34,7 @@ const gameQuestion = () => {
 const chekingAnswer = (expression) => {
   const array = expression.split(' ').map(Number);
   for (let i = 0; i < array.length; i += 1) {
+    // eslint-disable-next-line no-restricted-globals
     if (isNaN(array[i])) {
       if (array[i - 1] && array[i + 1]) {
         return (array[i - 1] + ((array[i + 1] - array[i - 1]) / 2)).toString();
