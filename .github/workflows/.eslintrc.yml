@@ -1,25 +1,21 @@
-root: true
-
+--- 
 on: push
-extends: airbnb-base
-
-rules:
-  no-console: 'off',
-  import/extensions: 'off'
-
-parserOptions:
-  ecmaVersion: 12
-  sourceType: module
-
-env:
+root: true
+env: 
   browser: true
   es2021: true
   node: true
-
-jobs:
-  run_eslint:
+extends: airbnb-base
+jobs: 
+  run_eslint: 
     runs-on: ubuntu-latest
-    steps:
-    - run:
-        make lint
+    steps: 
+      - 
+        run: "make lint"
+parserOptions: 
+  ecmaVersion: 12
+  sourceType: module
+rules: 
+  import/extensions: "off"
+  no-console: "off"
 
