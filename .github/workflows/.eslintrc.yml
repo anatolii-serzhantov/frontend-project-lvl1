@@ -7,18 +7,18 @@ jobs:
     - run:
         standart --fix
         make lint
-        
-env:
-  browser: true
-  es2021: true
-  node: true
-extends:
-  - airbnb-base
-parserOptions:
-  ecmaVersion: 12
-  sourceType: module
-rules: {
-  no-console: 'off',
-  import/extensions: 'off',
-}
+
+# env:
+#   browser: true
+#   es2021: true
+#   node: true
+#   extends:
+#   - airbnb-base
+# parserOptions:
+#   ecmaVersion: 12
+#   sourceType: module
+# rules: {
+#   no-console: 'off',
+#   import/extensions: 'off',
+# }
 
