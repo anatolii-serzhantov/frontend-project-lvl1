@@ -9,6 +9,10 @@ const gameQuestion = () => {
 };
 
 const chekingAnswer = (expression) => {
+  if (expression === '1' || expression === '0') {
+    return 'no';
+  }
+
   const number = Number(expression);
   let result = 'yes';
   for (let i = 2; i < number; i += 1) {
