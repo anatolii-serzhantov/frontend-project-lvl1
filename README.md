@@ -1,8 +1,14 @@
 # Brain games
 ## brain-even
+[![asciicast](https://asciinema.org/a/403716.svg)](https://asciinema.org/a/403716)
 ## brain-calc
+[![asciicast](https://asciinema.org/a/403738.svg)](https://asciinema.org/a/403738)
 ## brain-gcd
+[![asciicast](https://asciinema.org/a/403739.svg)](https://asciinema.org/a/403739)
 ## brain-progression
+[![asciicast](https://asciinema.org/a/403742.svg)](https://asciinema.org/a/403742)
+## brain-prime
+[![asciicast](https://asciinema.org/a/403741.svg)](https://asciinema.org/a/403741)
 ### Hexlet tests and linter status
 [![Actions Status](https://github.com/anatolii-serzhantov/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/anatolii-serzhantov/frontend-project-lvl1/actions)
 
