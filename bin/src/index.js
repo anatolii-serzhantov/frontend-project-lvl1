@@ -1,17 +1,17 @@
-/* eslint-disable import/named */
-import { askingUserAnswer } from './cli.js';
-import { userName } from '../brain-games.js';
+import readLineSync from 'readline-sync';
 
-console.log(`Hello, ${userName}!`);
+const rounds = 3;
 
-const engine = (description, question, checker) => {
-  console.log(description);
-  for (let i = 0; i < 3; i += 1) {
-    const singleQuestion = question();
-    console.log(`Question: ${singleQuestion}`);
-    const answer = askingUserAnswer();
-    const checkedAnswer = checker(singleQuestion);
-    checker(checkedAnswer);
+const gameEngine = (showDescription, askQuestion, checkAnswer) => {
+  console.log('Welcome to the Brain Games!');
+  const userName = readLineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
+  console.log(showDescription);
+  for (let i = 0; i < rounds; i += 1) {
+    const askedQuestion = askQuestion();
+    console.log(`Question: ${askedQuestion}`);
+    const answer = readLineSync.question('Your answer: ');
+    const checkedAnswer = checkAnswer(askedQuestion);
     if (answer === checkedAnswer) {
       console.log('Correct');
     } else {
@@ -25,4 +25,4 @@ const engine = (description, question, checker) => {
   }
 };
 
-export default engine;
+export default gameEngine;
