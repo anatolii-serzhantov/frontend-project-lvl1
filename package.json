@@ -1,18 +1,17 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/anatolii-serzhantov/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/anatolii-serzhantov/frontend-project-lvl1/actions)",
+  "description": "Math console game",
   "main": "index.js",
-  "start": "node --experimental-modules src/index.mjs ",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/anatolii-serzhantov/frontend-project-lvl1.git"
   },
-  "author": "",
+  "author": "Anatolii Serzhantov",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/anatolii-serzhantov/frontend-project-lvl1/issues"
@@ -27,14 +26,11 @@
   },
   "homepage": "https://github.com/anatolii-serzhantov/frontend-project-lvl1#readme",
   "dependencies": {
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jest": "^24.3.1",
-    "frontend-project-lvl1": "^1.4.0",
-    "jest": "^26.6.3",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
-    "eslint": "^7.22.0"
+    "eslint": "^7.22.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
   }
 }
