@@ -30,24 +30,20 @@ export const gameQuestion = () => {
   return createProgression(firstNumber, increaseNumber);
 };
 
+// eslint-disable-next-line consistent-return
 export const gameAnswer = (expression) => {
   const array = expression.split(' ').map(Number);
-  let answer = '';
   for (let i = 0; i < array.length; i += 1) {
     if (Number.isNaN(array[i])) {
       if (array[i - 1] && array[i + 1]) {
-        answer = String([i - 1] + ((array[i + 1] - array[i - 1]) / 2));
-        break;
+        return String(array[i - 1] + ((array[i + 1] - array[i - 1]) / 2));
       }
       if (i === array.length - 1) {
-        answer = String([i - 1] + ((array[i - 1] - array[i - 2])));
-        break;
+        return String(array[i - 1] + ((array[i - 1] - array[i - 2])));
       }
       if (i === 0) {
-        answer = String((array[i + 1] - ((array[i + 2] - array[i + 1]))));
-        break;
+        return String((array[i + 1] - ((array[i + 2] - array[i + 1]))));
       }
     }
   }
-  return answer;
 };
