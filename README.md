@@ -20,7 +20,7 @@ Clone repository:
 
 Install dependencies:
 
-`npm ci`
+`make install`
 
 Install games as global package:
 
@@ -31,7 +31,6 @@ Install games as global package:
 ### **3. Is the number even?**
 
 Command:
-
 `brain-even`
 
 Write "yes" or "no".
