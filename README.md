@@ -28,7 +28,7 @@ Install games globally:
 
 ## Games
 
-### **3. Is the number even?**
+### **1. Is the number even?**
 
 Command:
 `brain-even`
