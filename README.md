@@ -12,7 +12,7 @@ This project consists of 5 math console games which asks user three unique quest
 
 This project was created as part of my education on [Hexlet](https://ru.hexlet.io/programs/frontend)
 
-## Setup:
+## Setup
 
 Clone repository:
 
@@ -22,7 +22,7 @@ Install dependencies:
 
 `make install`
 
-Install games as global package:
+Install games globally:
 
 `npm link`
 
