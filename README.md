@@ -10,7 +10,7 @@ This project consists of 5 math console games which asks user three unique quest
 * What is the result of the calculation?
 * What is the missing number of progression?
 
-This project was created as part of my education on [![Hexlet](https://ru.hexlet.io/programs/frontend)]
+This project was created as part of my education on [Hexlet](https://ru.hexlet.io/programs/frontend "Я ссылка")
 
 ## Setup:
 
