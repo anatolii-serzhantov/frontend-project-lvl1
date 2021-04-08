@@ -1,12 +1,11 @@
 import runGame from '../index.js';
+import getRandomNumber from '../randomNum.js';
 
 const gameDescription = 'What number is missing in the progression?';
 
 const gameQuestion = () => {
-  const rangeOfFirstNumber = 30;
-  const firstNumber = Math.floor(Math.random() * rangeOfFirstNumber);
-  const incrementStep = 10;
-  const increaseNumber = Math.floor(Math.random() * incrementStep);
+  const firstNumber = getRandomNumber(0, 30);
+  const increaseNumber = getRandomNumber(0, 10);
 
   const createProgression = (start, add) => {
     const fullPogression = [];
@@ -17,7 +16,7 @@ const gameQuestion = () => {
       fullPogression.push(number);
     }
 
-    const randomNumber = Math.floor(Math.random() * fullPogression.length);
+    const randomNumber = getRandomNumber(0, fullPogression.length);
     const firstPartOfProgression = fullPogression.slice(0, randomNumber);
     const secondPartOfProgression = fullPogression.slice(randomNumber + 1);
     const hatchCharacter = '..';
