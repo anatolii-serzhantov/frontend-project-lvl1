@@ -1,4 +1,4 @@
-import gameEngine from '../index.js';
+import runGame from '../index.js';
 
 const findGcd = (a, b) => {
   if (!b) {
@@ -25,5 +25,5 @@ const gameAnswer = (expression) => {
 };
 
 export default () => {
-  gameEngine(gameDescription, gameQuestion, gameAnswer);
+  runGame(gameDescription, gameQuestion, gameAnswer);
 };

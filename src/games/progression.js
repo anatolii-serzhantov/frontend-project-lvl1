@@ -1,4 +1,4 @@
-import gameEngine from '../index.js';
+import runGame from '../index.js';
 
 const gameDescription = 'What number is missing in the progression?';
 
@@ -51,5 +51,5 @@ const gameAnswer = (expression) => {
 };
 
 export default () => {
-  gameEngine(gameDescription, gameQuestion, gameAnswer);
+  runGame(gameDescription, gameQuestion, gameAnswer);
 };
