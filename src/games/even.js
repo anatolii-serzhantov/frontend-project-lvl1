@@ -1,20 +1,18 @@
-import runGame from '../index.js';
-import getRandomNumber from '../randomNum.js';
-
-const isEven = (number) => number % 2 === 0;
+import launchGame from '../index.js';
+import getRandomNumber from '../getRandomNumber.js';
 
 const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const gameQuestion = () => {
-  const randomNumber = getRandomNumber(0, 100);
-  return randomNumber;
-};
+const isEven = (number) => number % 2 === 0;
 
-const gameAnswer = (number) => {
-  const correctAnswer = isEven(number) ? 'yes' : 'no';
-  return correctAnswer;
+const runGameRound = () => {
+  const randomNumber = getRandomNumber(0, 100);
+  const question = randomNumber;
+  const answer = isEven(randomNumber) ? 'yes' : 'no';
+  const result = [question, answer];
+  return result;
 };
 
 export default () => {
-  runGame(gameDescription, gameQuestion, gameAnswer);
+  launchGame(gameDescription, runGameRound);
 };

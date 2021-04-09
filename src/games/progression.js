@@ -1,54 +1,31 @@
-import runGame from '../index.js';
-import getRandomNumber from '../randomNum.js';
+import launchGame from '../index.js';
+import getRandomNumber from '../getRandomNumber.js';
 
 const gameDescription = 'What number is missing in the progression?';
 
-const gameQuestion = () => {
-  const firstNumber = getRandomNumber(0, 30);
-  const increaseNumber = getRandomNumber(0, 10);
-
-  const createProgression = (start, add) => {
-    const fullPogression = [];
-    fullPogression.push(start);
-    let number = start;
-    for (let i = 0; i < 9; i += 1) {
-      number += add;
-      fullPogression.push(number);
-    }
-
-    const randomNumber = getRandomNumber(0, fullPogression.length);
-    const firstPartOfProgression = fullPogression.slice(0, randomNumber);
-    const secondPartOfProgression = fullPogression.slice(randomNumber + 1);
-    const hatchCharacter = '..';
-    const unitedProgression = [];
-    unitedProgression.push(firstPartOfProgression);
-    unitedProgression.push(hatchCharacter);
-    unitedProgression.push(secondPartOfProgression);
-    const progressionWithShadedElement = `${unitedProgression.flat().join(' ')}`;
-    return progressionWithShadedElement;
-  };
-
-  return createProgression(firstNumber, increaseNumber);
+const createProgression = (firstNumber, increaseNumber, progressionLength) => {
+  let currentNumber = firstNumber;
+  const result = [];
+  for (let i = 1; i <= progressionLength; i += 1) {
+    result.push(currentNumber);
+    currentNumber += increaseNumber;
+  }
+  return result;
 };
 
-// eslint-disable-next-line consistent-return
-const gameAnswer = (expression) => {
-  const array = expression.split(' ').map(Number);
-  for (let i = 0; i < array.length; i += 1) {
-    if (Number.isNaN(array[i])) {
-      if (array[i - 1] && array[i + 1]) {
-        return String(array[i - 1] + ((array[i + 1] - array[i - 1]) / 2));
-      }
-      if (i === array.length - 1) {
-        return String(array[i - 1] + ((array[i - 1] - array[i - 2])));
-      }
-      if (i === 0) {
-        return String((array[i + 1] - ((array[i + 2] - array[i + 1]))));
-      }
-    }
-  }
+const runGameRound = () => {
+  const firstNumber = getRandomNumber(0, 30);
+  const increaseNumber = getRandomNumber(0, 10);
+  const progressionLength = 10;
+  const answerIndex = getRandomNumber(0, progressionLength);
+  const progression = createProgression(firstNumber, increaseNumber, progressionLength);
+  const answer = progression[answerIndex].toString();
+  const question = progression;
+  question.splice(answerIndex, 1, '..').toString();
+  const result = [question.join(' '), answer];
+  return result;
 };
 
 export default () => {
-  runGame(gameDescription, gameQuestion, gameAnswer);
+  launchGame(gameDescription, runGameRound);
 };
