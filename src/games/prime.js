@@ -1,4 +1,4 @@
-import launchGame from '../index.js';
+import runEngine from '../index.js';
 import getRandomNumber from '../getRandomNumber.js';
 
 const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -8,13 +8,12 @@ const isPrime = (number) => {
     return false;
   }
 
-  const result = true;
   for (let i = 2; i < number; i += 1) {
     if (number % i === 0) {
       return false;
     }
   }
-  return result;
+  return true;
 };
 
 const runGameRound = () => {
@@ -25,5 +24,5 @@ const runGameRound = () => {
 };
 
 export default () => {
-  launchGame(gameDescription, runGameRound);
+  runEngine(gameDescription, runGameRound);
 };

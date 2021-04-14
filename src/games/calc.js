@@ -1,4 +1,4 @@
-import launchGame from '../index.js';
+import runEngine from '../index.js';
 import getRandomNumber from '../getRandomNumber.js';
 
 const gameDescription = 'What is the result of the expression?';
@@ -9,21 +9,12 @@ const getOperator = () => {
 };
 
 const calculateMathOperation = (randomNumberOne, randomNumberTwo, operator) => {
-  let result = 0;
   switch (operator) {
-    case '+':
-      result = randomNumberOne + randomNumberTwo;
-      break;
-    case '-':
-      result = randomNumberOne - randomNumberTwo;
-      break;
-    case '*':
-      result = randomNumberOne * randomNumberTwo;
-      break;
-    default:
-      throw new Error(`Оператор ${operator} не поддерживается`);
+    case '+': return randomNumberOne + randomNumberTwo;
+    case '-': return randomNumberOne - randomNumberTwo;
+    case '*': return randomNumberOne * randomNumberTwo;
+    default: throw new Error(`Оператор ${operator} не поддерживается`);
   }
-  return result;
 };
 
 const runGameRound = () => {
@@ -37,5 +28,5 @@ const runGameRound = () => {
 };
 
 export default () => {
-  launchGame(gameDescription, runGameRound);
+  runEngine(gameDescription, runGameRound);
 };

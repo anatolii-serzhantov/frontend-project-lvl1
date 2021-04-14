@@ -1,4 +1,4 @@
-import launchGame from '../index.js';
+import runEngine from '../index.js';
 import getRandomNumber from '../getRandomNumber.js';
 
 const gameDescription = 'What number is missing in the progression?';
@@ -20,12 +20,11 @@ const runGameRound = () => {
   const answerIndex = getRandomNumber(0, progressionLength);
   const progression = createProgression(firstNumber, increaseNumber, progressionLength);
   const answer = progression[answerIndex].toString();
-  const question = progression;
-  question.splice(answerIndex, 1, '..').toString();
-  const result = [question.join(' '), answer];
-  return result;
+  progression.splice(answerIndex, 1, '..').toString();
+  const question = progression.join(' ');
+  return [question, answer];
 };
 
 export default () => {
-  launchGame(gameDescription, runGameRound);
+  runEngine(gameDescription, runGameRound);
 };
