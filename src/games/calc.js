@@ -17,16 +17,15 @@ const calculateMathOperation = (randomNumberOne, randomNumberTwo, operator) => {
   }
 };
 
-const runGameRound = () => {
+const getQuestionAndAnswer = () => {
   const randomNumberOne = getRandomNumber(0, 101);
   const randomNumberTwo = getRandomNumber(0, 101);
   const operator = getOperator();
   const question = `${randomNumberOne} ${operator} ${randomNumberTwo}`;
-  const answer = calculateMathOperation(randomNumberOne, randomNumberTwo, operator).toString();
-  const result = [question, answer];
-  return result;
+  const answer = calculateMathOperation(randomNumberOne, randomNumberTwo, operator);
+  return [question, String(answer)];
 };
 
 export default () => {
-  runEngine(gameDescription, runGameRound);
+  runEngine(gameDescription, getQuestionAndAnswer);
 };

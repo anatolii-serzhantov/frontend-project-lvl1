@@ -11,15 +11,14 @@ const findGcd = (a, b) => {
   return findGcd(b, a % b);
 };
 
-const runGameRound = () => {
+const getQuestionAndAnswer = () => {
   const randomNumberOne = getRandomNumber(0, 100);
   const randomNumberTwo = getRandomNumber(0, 100);
   const question = `${randomNumberOne} ${randomNumberTwo}`;
-  const answer = findGcd(randomNumberOne, randomNumberTwo).toString();
-  const result = [question, answer];
-  return result;
+  const answer = findGcd(randomNumberOne, randomNumberTwo);
+  return [question, String(answer)];
 };
 
 export default () => {
-  runEngine(gameDescription, runGameRound);
+  runEngine(gameDescription, getQuestionAndAnswer);
 };
